@@ -1,7 +1,7 @@
 Meteor.startup(function() {
     let isTesting = Meteor.isPackageTest;
     if (isTesting) {
-        return;  // If testing, don't check for jack squat.
+        return;  // If testing, don't check for jack squat so we can have two packages, thus allowing us to test both.
     }
 
     let bothRouterExist = !!Package['iron:router'] && !!Package['kadira:flow-router'];

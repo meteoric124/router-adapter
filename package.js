@@ -1,6 +1,6 @@
 Package.describe({
   name: 'meteoric124:router-adapter',
-  version: '0.1.0-beta.1',
+  version: '0.1.0-beta.2',
   // Brief, one-line summary of the package.
   summary: 'Router adapter enables router agnostic meteor packages.',
   // URL to the Git repository containing the source code for this package.

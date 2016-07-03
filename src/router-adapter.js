@@ -44,7 +44,14 @@ export class IronRouterAdapter extends RouterAdapter {
         }
     }
     current() { return this.router.current(); }
-    routeName() { return this.router.current().route.getName(); }
+    routeName() {
+        let routeName = this.router.current().route.getName();
+        if (isDefined(routeName)) {
+            return routeName;
+        } else {
+            return this.path();
+        }
+    }
     params() {
         let params_copy = {};
         for (var key in this.current().params) {
@@ -112,7 +119,12 @@ export class FlowRouterAdapter extends RouterAdapter {
         return this.router.current();
     }
     routeName() {
-        return this.router.current().route.name;
+        let routeName = this.router.current().route.name;
+        if (isDefined(routeName)) {
+            return routeName;
+        } else {
+            return this.path();
+        }
     }
     params() {
         let params_copy = {};

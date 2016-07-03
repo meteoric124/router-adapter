@@ -42,17 +42,13 @@ describe('router-adapter - iron-router', function () {
             expect(RouterInstance.routeName()).toBe('Home');
         });
 
-        /**
-         * Note: Can't get this to work with iron:router. It keeps printing 'route' for
-         *       routeName.
-         *
+        // Note: this fails, for some reason, routeName = 'route' when no name is given for iron:router.
         it('Router.routeName prints the routeName of a route with out a routeName.', function () {
             RouterInstance.go('/justapath');
             Tracker.flush();
 
-            expect(RouterInstance.routeName()).toBe('justapath');
+            expect(RouterInstance.routeName()).toBe('/justapath');
         });
-         */
     });
 
     describe('params', function() {
