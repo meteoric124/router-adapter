@@ -1,5 +1,7 @@
 import { Tracker } from 'meteor/tracker';
-import { RouterInstance } from '../src/router-adapter';
+import { IronRouterAdapter } from '../src/router-adapter';
+
+let RouterInstance = new IronRouterAdapter(Package['iron:router'].Router);
 
 describe('router-adapter - iron-router', function () {
     beforeAll(function() {
